@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TanTechDesk</title>
+  <style>
+    /* ====== RESET ====== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #0d1117;
+      color: #e6edf3;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ====== HEADER ====== */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 8%;
+      background: rgba(13, 17, 23, 0.95);
+      position: fixed;
+      width: 100%;
+      z-index: 100;
+      backdrop-filter: blur(8px);
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      color: #58a6ff;
+    }
+
+    nav a {
+      margin-left: 2rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #58a6ff;
+    }
+
+    /* ====== HERO SECTION ====== */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background: linear-gradient(to right, #0d1117, #161b22);
+      text-align: center;
+      padding: 0 1rem;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #58a6ff;
+    }
+
+    .hero p {
+      max-width: 600px;
+      margin-bottom: 2rem;
+      color: #c9d1d9;
+    }
+
+    .hero button {
+      padding: 0.8rem 1.8rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #58a6ff;
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .hero button:hover {
+      background-color: #1f6feb;
+    }
+
+    /* ====== FEATURES ====== */
+    .features {
+      padding: 6rem 8%;
+      background: #161b22;
+      text-align: center;
+    }
+
+    .features h3 {
+      font-size: 2rem;
+      margin-bottom: 2rem;
+      color: #58a6ff;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .feature {
+      background: #0d1117;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s;
+    }
+
+    .feature:hover {
+      transform: translateY(-8px);
+    }
+
+    .feature h4 {
+      margin-bottom: 1rem;
+      color: #fff;
+    }
+
+    /* ====== ABOUT ====== */
+    .about {
+      padding: 6rem 8%;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .about img {
+      width: 400px;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
+
+    .about-text {
+      flex: 1;
+    }
+
+    .about-text h3 {
+      font-size: 2rem;
+      color: #58a6ff;
+      margin-bottom: 1rem;
+    }
+
+    /* ====== CTA ====== */
+    .cta {
+      background: linear-gradient(90deg, #58a6ff, #1f6feb);
+      color: #fff;
+      text-align: center;
+      padding: 4rem 1rem;
+    }
+
+    .cta h3 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .cta button {
+      padding: 0.8rem 1.8rem;
+      border: none;
+      border-radius: 8px;
+      background-color: #0d1117;
+      color: #58a6ff;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .cta button:hover {
+      background-color: #161b22;
+    }
+
+    /* ====== FOOTER ====== */
+    footer {
+      background: #0d1117;
+      text-align: center;
+      padding: 2rem 0;
+      border-top: 1px solid #30363d;
+    }
+
+    footer p {
+      color: #8b949e;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #58a6ff;
+      margin: 0 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>TanTechDesk</h1>
+    <nav>
+      <a href="#features">Features</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Welcome to My Blog</h2>
+    <p>This is where I; review and talk about, software, hardware, and anything "tech" related.</p>
+    <a href="listing.html"><button>Dive In!</button></a>
+  </section>
+
+  <section id="features" class="features">
+    <h3>Things You Will Find Here.</h3>
+    <div class="feature-grid">
+      <div class="feature">
+        <h4>Tech Reviews</h4>
+        <p>Unbiased, in-depth explanation, and opinion of hardware and software.</p>
+      </div>
+      <div class="feature">
+        <h4>Projects & Labs</h4>
+        <p>Hands-on experiments, DIY guides, and fun.</p>
+      </div>
+      <div class="feature">
+        <h4>Community Support</h4>
+        <p>Join me in learning. I would love feedback, as well as recommendations for future projects.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <img src="images/Tux.svg" alt="Tech Workspace">
+    <div class="about-text">
+      <h3>whoami</h3>
+      <p>I am a tech enthusiast. I enjoy exploring technology, that interests me. This may include well known or newer applications, software, or hardware. I am a huge fan of self-hosting. </p>
+    </div>
+  </section>
+
+  <section class="cta">
+    <h3>Want to contact me? </h3>
+    <button>Contact options</button>
+  </section>
+
+  <footer id="contact">
+    <p>© 2025 TanTech Desk | Built for Wonder.</p>
+    <div>
+      <a href="https://github.com/TanTan1941">GitHub</a> •
+      <a href="https://www.linkedin.com/in/tanner-blattenberg-86516124b/">LinkedIn</a>
+    </div>
+  </footer>
+</body>
+</html>
+
+
+

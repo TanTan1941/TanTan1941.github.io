@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TanTech Desk | Projects Directory</title>
+  <style>
+    /* ====== RESET ====== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #0d1117;
+      color: #e6edf3;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ====== HEADER ====== */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 8%;
+      background: rgba(13, 17, 23, 0.95);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #30363d;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      color: #58a6ff;
+    }
+
+    nav a {
+      margin-left: 2rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #58a6ff;
+    }
+
+    /* ====== HERO SECTION ====== */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 50vh;
+      background: linear-gradient(to right, #0d1117, #161b22);
+      text-align: center;
+      padding: 0 1rem;
+      padding-top: 100px; /* offset for fixed header */
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #58a6ff;
+    }
+
+    .hero p {
+      max-width: 600px;
+      color: #c9d1d9;
+    }
+
+    /* ====== PROJECTS GRID ====== */
+    .projects {
+      padding: 6rem 8%;
+      background: #161b22;
+    }
+
+    .projects h3 {
+      text-align: center;
+      font-size: 2rem;
+      color: #58a6ff;
+      margin-bottom: 3rem;
+    }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .project {
+      background: #0d1117;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+    }
+
+    .project img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+
+    .project-content {
+      padding: 1.5rem;
+    }
+
+    .project-content h4 {
+      margin-bottom: 0.8rem;
+      color: #58a6ff;
+    }
+
+    .project-content p {
+      font-size: 0.95rem;
+      color: #c9d1d9;
+      margin-bottom: 1rem;
+    }
+
+    .project-content a {
+      display: inline-block;
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      background-color: #58a6ff;
+      color: #fff;
+      font-weight: 500;
+      transition: background 0.3s;
+    }
+
+    .project-content a:hover {
+      background-color: #1f6feb;
+    }
+
+    /* ====== FOOTER ====== */
+    footer {
+      background: #0d1117;
+      text-align: center;
+      padding: 2rem 0;
+      border-top: 1px solid #30363d;
+    }
+
+    footer p {
+      color: #8b949e;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #58a6ff;
+      margin: 0 0.5rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>TanTech Desk</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Projects Directory</h2>
+    <p>Browse through my technical projects — from home lab builds to software setups and network configurations.</p>
+  </section>
+
+  <section class="projects">
+    <h3>All Projects</h3>
+    <div class="project-grid">
+      <div class="project">
+        <img src="images/wireguard.png" alt="WireGuard VPN">
+        <div class="project-content">
+          <h4>WireGuard VPN</h4>
+          <p>Secure remote access using WireGuard tunnels with dynamic routing and DNS control.</p>
+          <a href="projects/wireguard.html">View Project</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <img src="images/Brocade.jpg" alt="Brocade Switch">
+        <div class="project-content">
+          <h4>Brocade Switch Configuration</h4>
+          <p>Enterprise-grade network setup, VLANs, and STP tuning using a Brocade ICX switch.</p>
+          <a href="projects/brocade.html">View Project</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <img src="images/unifi.svg" alt="Unifi Setup">
+        <div class="project-content">
+          <h4>Unifi Network Deployment</h4>
+          <p>Unified network management and adoption of APs via controller on Ubuntu Server.</p>
+          <a href="projects/unifi.html">View Project</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <img src="images/proxmox.webp" alt="Proxmox Server">
+        <div class="project-content">
+          <h4>Proxmox Virtualization</h4>
+          <p>Running multiple servers and containers efficiently using Proxmox VE on bare metal.</p>
+          <a href="projects/proxmox.html">View Project</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <img src="images/docker.png" alt="Docker Server">
+        <div class="project-content">
+          <h4>Docker Server (Ubuntu)</h4>
+          <p>Containerized services managed through Docker Compose for lightweight deployment.</p>
+          <a href="projects/docker.html">View Project</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <img src="images/jellyfin.png" alt="Jellyfin Media Server">
+        <div class="project-content">
+          <h4>Jellyfin Media Server</h4>
+          <p>Self-hosted streaming media platform running securely with Nginx and SSL.</p>
+          <a href="projects/jellyfin.html">View Project</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <img src="images/pihole.svg" alt="Pi-hole DNS">
+        <div class="project-content">
+          <h4>Pi-hole Network DNS</h4>
+          <p>Network-wide ad blocking and DNS filtering integrated with Unifi and WireGuard.</p>
+          <a href="projects/pihole.html">View Project</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <img src="images/joplin.png" alt="Joplin Server">
+        <div class="project-content">
+          <h4>Joplin Server</h4>
+          <p>Self-hosted note-taking synchronization and data privacy solution with Docker.</p>
+          <a href="projects/joplin.html">View Project</a>
+        </div>
+      </div>
+
+      <div class="project">
+        <img src="images/flame.png" alt="Flame Dashboard">
+        <div class="project-content">
+          <h4>Flame Dashboard</h4>
+          <p>Centralized self-hosted homepage to manage and access all server web interfaces.</p>
+          <a href="projects/flame.html">View Project</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer id="contact">
+    <p>© 2025 TanTech Desk | Built for Wonder.</p>
+    <div>
+      <a href="https://github.com/TanTan1941">GitHub</a> •
+      <a href="https://www.linkedin.com/in/tanner-blattenberg-86516124b/">LinkedIn</a>
+    </div>
+  </footer>
+</body>
+</html>
+
+
