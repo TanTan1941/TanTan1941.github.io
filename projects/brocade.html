@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TanTech Desk | Brocade ICX 6450</title>
+
+  <style>
+    /* ====== RESET ====== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #0d1117;
+      color: #e6edf3;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ====== HEADER ====== */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 8%;
+      background: rgba(13, 17, 23, 0.95);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #30363d;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      color: #58a6ff;
+    }
+
+    nav a {
+      margin-left: 2rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #58a6ff;
+    }
+
+    /* ====== HERO ====== */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 50vh;
+      background: linear-gradient(to right, #0d1117, #161b22);
+      text-align: center;
+      padding: 0 1rem;
+      padding-top: 100px;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #58a6ff;
+    }
+
+    .hero p {
+      max-width: 700px;
+      color: #c9d1d9;
+    }
+
+    /* ====== CONTENT ====== */
+    .content {
+      padding: 4rem 8%;
+      background: #161b22;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section h3 {
+      color: #58a6ff;
+      margin-bottom: 1rem;
+    }
+
+    .section p {
+      color: #c9d1d9;
+      margin-bottom: 1rem;
+    }
+
+    .code-block {
+      background: #0d1117;
+      padding: 1rem;
+      border-radius: 8px;
+      font-family: monospace;
+      overflow-x: auto;
+      border: 1px solid #30363d;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+      color: #c9d1d9;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* ====== FOOTER ====== */
+    footer {
+      background: #0d1117;
+      text-align: center;
+      padding: 2rem 0;
+      border-top: 1px solid #30363d;
+    }
+
+    footer p {
+      color: #8b949e;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #58a6ff;
+      margin: 0 0.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>TanTech Desk</h1>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>Brocade ICX 6450 Switch</h2>
+    <p>
+      Enterprise-grade Layer 3 switch powering my home network with VLAN capability,
+      high-speed switching, and advanced routing capabilities.
+    </p>
+  </section>
+
+  <section class="content">
+
+    <div class="section">
+      <h3>Overview</h3>
+      <p>
+        The Brocade ICX 6450 serves as the core switch in my home lab. It provides 
+        enterprise-level features at a very affordable price on the used market.
+      </p>
+    </div>
+
+    <div class="section">
+      <h3>Why This Switch?</h3>
+      <ul>
+        <li>Enterprise-grade hardware at homelab pricing</li>
+        <li>Layer 3 routing capabilities</li>
+        <li>10Gb SFP+ uplinks</li>
+        <li>Extremely reliable and stable</li>
+        <li>CLI experience similar to Cisco</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h3>Key Features</h3>
+      <ul>
+        <li>VLAN segmentation for network isolation</li>
+        <li>Inter-VLAN routing handled directly on the switch</li>
+        <li>Spanning Tree Protocol (STP) configuration</li>
+        <li>Link aggregation (LAG) for increased throughput</li>
+        <li>PoE support (depending on model)</li>
+        <li>Rapid Spanning Tree (RSTP) - which is what I use</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h3>Basic VLAN Configuration</h3>
+      <p>Example of creating a VLAN and assigning ports:</p>
+
+      <div class="code-block">
+vlan 10 name SERVERS
+untagged ethernet 1/1/1 to 1/1/8
+router-interface ve 10
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Inter-VLAN Routing</h3>
+      <p>
+        The switch is configured to handle routing between VLANs using virtual interfaces (VE).
+        This reduces load on the router and significantly improves internal network performance.
+      </p>
+
+      <div class="code-block">
+interface ve 10
+ip address 192.168.10.1 255.255.255.0
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Use Cases</h3>
+      <ul>
+        <li>Segmenting IoT, servers, and personal devices</li>
+        <li>Improving network security through isolation</li>
+        <li>High-speed backbone for my home lab servers</li>
+        <li>Managing traffic between services efficiently</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h3>Future Improvements</h3>
+      <ul>
+        <li>Expand use of 10Gb connections</li>
+        <li>Fine-tune STP settings</li>
+        <li>Implement VLANs</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h3>My Thoughts & Opinions</h3>
+      <p>
+        This switch has been one of the biggest upgrades to my home network. Before this, I plugged straight into my router.
+        This has allowed me to add more networked devices to my lab. When implementing this switch, I ran cabling through my attic
+        from my garage to my router. I also added a small network cabinet to mount this switch, along with most of my other
+        devices. Thanks to the PoE provided by this switch, my unifi AP has a single cable. It has one for both uplink and power.
+      </p>
+
+      <p>
+        The CLI took a bit of getting used to, but once I got comfortable with it, the flexibility
+        and control it offers is on a completely different level compared to consumer gear. Most of what I 
+        learned from the CLI, directly carried over to work, in terms of working with cisco equipment. That 
+        to me, is one of the hugest benefits.
+        For the price I got it for($50), it’s honestly impossible to beat.
+      </p>
+    </div>
+
+  </section>
+
+  <footer id="contact">
+    <p>© 2025 TanTech Desk | Built for Wonder.</p>
+    <div>
+      <a href="https://github.com/TanTan1941">GitHub</a> •
+      <a href="https://www.linkedin.com/in/tanner-blattenberg-86516124b/">LinkedIn</a>
+    </div>
+  </footer>
+</body>
+</html>
