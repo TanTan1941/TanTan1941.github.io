@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TanTech Desk | UniFi Access Point</title>
+
+  <style>
+    /* ====== RESET ====== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #0d1117;
+      color: #e6edf3;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    /* ====== HEADER ====== */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1.5rem 8%;
+      background: rgba(13, 17, 23, 0.95);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid #30363d;
+    }
+
+    header h1 {
+      font-size: 1.5rem;
+      color: #58a6ff;
+    }
+
+    nav a {
+      margin-left: 2rem;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    nav a:hover {
+      color: #58a6ff;
+    }
+
+    /* ====== HERO ====== */
+    .hero {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 50vh;
+      background: linear-gradient(to right, #0d1117, #161b22);
+      text-align: center;
+      padding: 0 1rem;
+      padding-top: 100px;
+    }
+
+    .hero h2 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #58a6ff;
+    }
+
+    .hero p {
+      max-width: 700px;
+      color: #c9d1d9;
+    }
+
+    /* ====== CONTENT ====== */
+    .content {
+      padding: 4rem 8%;
+      background: #161b22;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section h3 {
+      color: #58a6ff;
+      margin-bottom: 1rem;
+    }
+
+    .section p {
+      color: #c9d1d9;
+      margin-bottom: 1rem;
+    }
+
+    .code-block {
+      background: #0d1117;
+      padding: 1rem;
+      border-radius: 8px;
+      font-family: monospace;
+      overflow-x: auto;
+      border: 1px solid #30363d;
+    }
+
+    ul {
+      padding-left: 1.5rem;
+      color: #c9d1d9;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* ====== FOOTER ====== */
+    footer {
+      background: #0d1117;
+      text-align: center;
+      padding: 2rem 0;
+      border-top: 1px solid #30363d;
+    }
+
+    footer p {
+      color: #8b949e;
+      font-size: 0.9rem;
+    }
+
+    footer a {
+      color: #58a6ff;
+      margin: 0 0.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>TanTech Desk</h1>
+    <nav>
+      <a href="../index.html">Home</a>
+      <a href="../index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h2>UniFi Access Point Setup</h2>
+    <p>
+      Centrally managed wireless networking using a UniFi Access Point,
+      controlled by a self-hosted UniFi Network Application on Ubuntu Server.
+    </p>
+  </section>
+
+  <section class="content">
+
+    <div class="section">
+      <h3>Overview</h3>
+      <p>
+        This setup uses a UniFi Access Point to provide reliable wireless coverage across my network,
+        managed through a UniFi Network Application running on my Ubuntu server. This allows for
+        centralized control, monitoring, and advanced configuration of wireless networks.
+      </p>
+    </div>
+
+    <div class="section">
+      <h3>Why UniFi?</h3>
+      <ul>
+        <li>Enterprise-style management for home use</li>
+        <li>Centralized controller for all devices</li>
+        <li>Clean and intuitive web interface</li>
+        <li>Great performance and reliability</li>
+        <li>Seamless VLAN and multi-SSID support</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h3>Controller Setup (Ubuntu Server)</h3>
+      <p>
+        The UniFi Network Application is hosted on an Ubuntu Server, allowing me to manage the AP
+        without needing dedicated UniFi hardware like a Cloud Key.
+      </p>
+
+      <div class="code-block">
+sudo apt update
+sudo apt install openjdk-17-jre
+      </div>
+
+      <div class="code-block">
+# Install UniFi Network Application (via repository)
+echo 'deb https://www.ui.com/downloads/unifi/debian stable ubiquiti' | sudo tee /etc/apt/sources.list.d/100-ubnt.list
+sudo apt update
+sudo apt install unifi
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Adoption Process</h3>
+      <p>
+        Once the AP is connected to the network, it is discovered by the controller and can be adopted.
+        In some cases, manual SSH adoption may be required.
+      </p>
+
+      <div class="code-block">
+set-inform http://&lt;controller-ip&gt;:8080/inform
+      </div>
+    </div>
+
+    <div class="section">
+      <h3>Key Features</h3>
+      <ul>
+        <li>Multiple SSIDs mapped to VLANs</li>
+        <li>Guest network isolation</li>
+        <li>Bandwidth limits and traffic shaping</li>
+        <li>Real-time device monitoring</li>
+        <li>Automatic firmware updates</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h3>Use Cases</h3>
+      <ul>
+        <li>Separate networks for guests, IoT, and main devices</li>
+        <li>Improved wireless coverage and roaming</li>
+        <li>Centralized management of wireless settings</li>
+        <li>Integration with VLANs on core switch</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h3>Future Improvements</h3>
+      <ul>
+        <li>Add additional APs for better coverage</li>
+        <li>Fine-tune channel and power settings</li>
+        <li>Implement advanced traffic rules</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h3>My Thoughts & Opinions</h3>
+      <p>
+        UniFi has been one of the easiest ways to get enterprise-level wireless networking at home.
+        The controller makes everything simple to manage, and having it self-hosted gives me full control.
+      </p>
+
+      <p>
+        Running the controller on Ubuntu was straightforward, and once everything was adopted,
+        it’s been extremely reliable. It pairs really well with my VLAN setup on the Brocade switch,
+        making the whole network feel much more structured and intentional.
+      </p>
+    </div>
+
+  </section>
+
+  <footer id="contact">
+    <p>© 2025 TanTech Desk | Built for Wonder.</p>
+    <div>
+      <a href="https://github.com/TanTan1941">GitHub</a> •
+      <a href="https://www.linkedin.com/in/tanner-blattenberg-86516124b/">LinkedIn</a>
+    </div>
+  </footer>
+</body>
+</html>
